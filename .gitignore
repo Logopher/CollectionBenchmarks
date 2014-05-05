@@ -19,3 +19,20 @@
 *.exe
 *.out
 *.app
+
+## Ignore Visual Studio temporary files and build results.
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+x64/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
