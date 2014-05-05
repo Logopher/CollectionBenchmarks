@@ -31,21 +31,19 @@ void insert(Map map)
 
 void main()
 {
-	std::cout << std::chrono::high_resolution_clock::period::den << std::endl;
-
-	getchar();
+	std::cout << "Clock resolution:," << std::chrono::high_resolution_clock::period::den << std::endl;
 
 	MapSpotter spotter{};
 
-	printf("Reps, std::map, std::unordered_map, prealloc'd std::unordered_map,\n");
+	printf("Reps,std::map,std::unordered_map,prealloc'd std::unordered_map,ArrayMap,prealloc'd ArrayMap\n");
 
-	for (int i = 1; i <= 500; i++)
+	for (int i = 500; i <= 500000; i++)
 	{
-		printf("%i, %"PRId64", %"PRId64", %"PRId64", \n", i,
+		printf("%i,%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64"\n", i,
 			spotter.spotStlMap<int, int>(i, insert),
 			spotter.spotStlUnorderedMap<int, int>(i, insert),
-			spotter.spotStlUnorderedMap_prealloc<int, int>(i, insert));
+			spotter.spotStlUnorderedMap_prealloc<int, int>(i, insert),
+			spotter.spotArrayMap<int, int>(i, insert),
+			spotter.spotArrayMap_prealloc<int, int>(i, insert));
 	}
-
-	getchar();
 }
