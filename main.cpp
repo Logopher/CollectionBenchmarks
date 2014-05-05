@@ -17,12 +17,14 @@ void insert(Map map)
 {
 	int key;
 	Map::iterator it;
-	do
+	if (false)
 	{
-		key = std::rand();
-		it = map.find(key);
+		do
+		{
+			key = std::rand();
+			it = map.find(key);
+		} while (it != map.end());
 	}
-	while (it != map.end());
 
 	map[key] = std::rand();
 }
